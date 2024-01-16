@@ -2,7 +2,7 @@
 
 Testing purpose application on how to instrumentate NodeJS services for Observability using OpenTelemetry SDK
 
-Disclaimer: TypeScript must be installed!
+Disclaimer: Docker, NodeJS and TypeScript must be installed!
 
 ### How to Run
 
@@ -40,4 +40,4 @@ docker run --rm -v ${PWD}/prometheus.yml:/prometheus/prometheus.yml -p 9090:9090
 npx ts-node --require ./instrumentation.ts app.ts
 ```
 
-After that, the app will be exposed on <a>http://localhost:8080</a>, traces will be available at <a>http://localhost:16686</a>, and metrics can be found at <a>http://localhost:9464</a>
+After that, the app will be exposed on <a>http://localhost:8080</a>, traces will be available at <a>http://localhost:16686</a> through Jaeger, and metrics can be found at <a>http://localhost:9090</a> through Prometheus.
